@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIZ Sign-up and Login Form</title>
+  <link rel="stylesheet" href="form1.css">
+  <link rel="icon" href="tab_logo.jpg" type="image/jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Sign-up Form -->
+    <div class="form-box sign-up">
+      <h2>Create Account</h2>
+      <form action="#">
+        <div class="input-box">
+          <input type="text" required>
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required minlength="8" maxlength="16">
+          <label>Password</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required minlength="8" maxlength="16">
+          <label>Confirm Password</label>
+        </div>
+        <button type="submit" class="btn"><a href="quiz.html">Sign Up</a></button>
+      </form>
+      <!-- <div class="social-login">
+        <div class="social-buttons">
+          <button id="google-signin" class="google"><i class="fab fa-google"></i></button>
+          <button id="facebook-signin" class="facebook"><i class="fab fa-facebook-f"></i></button>
+          <button id="instagram-signin" class="instagram"><i class="fab fa-instagram"></i></button>
+          <button id="linkedin-signin" class="linkedin"><i class="fab fa-linkedin-in"></i></button>
+        </div>
+      </div> -->
+      <div class="switch">
+        Already have an account? <a href="#" id="to-login">Login</a>
+      </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-box login">
+      <h2>Login</h2>
+      <form action="#">
+        <div class="input-box">
+          <input type="text" required>
+          <label>Username or Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required minlength="8" maxlength="16">
+          <label>Password</label>
+        </div>
+        <button type="submit" class="btn"><a href="quiz.html">Login</a></button>
+      </form>
+      <div class="social-login">
+        <p>Or log in with</p>
+        <div class="social-buttons">
+          <button id="google-login" class="google"><i class="fab fa-google"></i></button>
+          <button id="facebook-login" class="facebook"><i class="fab fa-facebook-f"></i></button>
+          <button id="instagram-login" class="instagram"><i class="fab fa-instagram"></i> </button>
+          <button id="linkedin-login" class="linkedin"><i class="fab fa-linkedin-in"></i></button>
+        </div>
+      </div>
+      <div class="switch">
+        Don't have an account? <a href="#" id="to-sign-up">Sign up</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="form1.js"></script>
+</body>
+</html>

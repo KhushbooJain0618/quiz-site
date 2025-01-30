@@ -1,0 +1,609 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;    
+}
+
+body {
+    background-color: #f8f9fa; /* Light gray background */
+    color: #212529; /* Dark gray text */
+    padding-top: 70px;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #343a40; /* Dark gray */
+    color: white;
+}
+
+.navbar .nav-link {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #ccc; /* Light gray on hover */
+}
+
+/* Carousel Animation */
+.animate-caption {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.custom-fixed-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* Ensure it’s above other elements */
+    background-color: #343a40; /* Maintain the dark navbar color */
+    border-bottom: 1px solid #ccc; /* Optional: Add a bottom border */
+}
+
+#login-btn {
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+#login-btn:hover {
+    color: #ccc; /* Light gray on hover */
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Carousel */
+.carousel {
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #6c757d; /* Medium gray */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 15px;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Slightly below the viewport */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Original position */
+    }
+}
+
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Initial state of the card */
+.card1.owner{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1.5s ease-in-out;
+}
+
+/* When the card comes into view */
+.card1.owner.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card1.member{
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 1.5s ease-in-out;
+}
+
+/* When the card comes into view */
+.card1.member.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    border-radius: 15px 15px 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Cards Container */
+.container .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Add spacing between cards */
+}
+
+.col-md-4 {
+    flex: 0 0 calc(33.333% - 20px); /* Ensure three cards per row with space */
+    max-width: calc(33.333% - 20px);
+    margin-bottom: 20px; /* Add margin between rows */
+}
+
+@media (max-width: 992px) {
+    .col-md-4 {
+        flex: 0 0 calc(50% - 20px); /* Two cards per row on medium screens */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-4 {
+        flex: 0 0 calc(100% - 20px); /* One card per row on small screens */
+        max-width: calc(100% - 20px);
+    }
+}
+
+/* Buttons */
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333333; /* Dark gray button */
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Quiz Container */
+.quiz-container {
+    background-color: #ffffff; /* White background */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: auto;
+    display: none;
+    margin-top: 80px;
+}
+
+.quiz-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #212529; /* Dark gray for title */
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.container h1{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.quiz-container .question {
+    font-size: 20px;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #343a40; /* Dark gray */
+}
+
+.quiz-container .choices {
+    margin-top: 15px;
+}
+
+.choice {
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: #f1f1f1; /* Light gray background for choices */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.choice:hover {
+    background-color: #eaeaea; /* Slightly darker gray on hover */
+}
+
+.choice.selected {
+    background-color: #343a40; /* Dark gray when selected */
+    color: #ffffff;
+}
+
+.scorecard {
+    font-size: 22px;
+    margin-top: 20px;
+    color: #343a40; /* Dark gray score text */
+}
+
+.timer {
+    margin: 10px auto;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6c757d; /* Medium gray for timer */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    animation: pulse 1s infinite;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .quiz-container h1 {
+        font-size: 24px;
+    }
+
+    .choice {
+        font-size: 16px;
+    }
+
+    .timer {
+        width: 60px;
+        height: 60px;
+        font-size: 16px;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .quiz-container h1 {
+        font-size: 24px;
+    }
+
+    .choice {
+        font-size: 16px;
+    }
+
+    .timer {
+        width: 60px;
+        height: 60px;
+        font-size: 16px;
+    }
+}
+
+
+/* Shades of Black, White, and Gray Theme */
+body {
+    background-color: #f8f9fa; /* Light gray background for the body */
+    color: #212529; /* Dark gray text */
+}
+
+.navbar {
+    background-color: #343a40; /* Dark gray navbar */
+}
+
+.carousel {
+    background-color: #6c757d; /* Medium gray carousel background */
+}
+
+.card {
+    background-color: #ffffff; /* White card background */
+    border: 1px solid #343a40; /* Darker gray border */
+}
+
+.card:hover {
+    background-color: #eaeef5; /* Dark gray card on hover */
+}
+
+button {
+    background-color: #333333; /* Dark gray button */
+    color: white;
+}
+
+button:hover {
+    background-color: #212529; /* Very dark gray on hover */
+}
+
+/* Quiz Specific Colors */
+.quiz-container {
+    background-color: #ffffff; /* White quiz container */
+}
+
+.timer {
+    background-color: #6c757d; /* Medium gray timer */
+}
+
+/* Darker shades of gray for some sections */
+.scorecard {
+    color: #343a40; /* Dark gray score text */
+}
+
+.choice.selected {
+    background-color: #343a40; /* Dark gray choice selected */
+}
+
+.choice:hover {
+    background-color: #eaeaea; /* Light gray hover effect */
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Adds spacing inside the caption */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow to text */
+    font-size: 1.2rem; /* Adjust font size for readability */
+    font-weight: bold; /* Makes text stand out */
+    animation: slideInUp 1s ease; /* Add a slide-in animation */
+    width: fit-content; /* Keep the caption width to its content */
+    margin: 0 auto; /* Center the caption horizontally */
+}
+
+/* Animation for sliding in */
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling for the heading */
+.carousel-caption h5 {
+    font-size: 2rem; /* Larger, mor
+    e impactful heading */
+    color: #f8f9fa; /* Light gray text */
+    margin-bottom: 10px; /* Adds spacing below the heading */
+}
+
+/* Styling for the paragraph */
+.carousel-caption p {
+    font-size: 1rem; /* Smaller paragraph text */
+    color: #dcdcdc; /* Light gray for contrast */
+    line-height: 1.5; /* Increases line spacing for better readability */
+}
+
+/* Ensure the captions look good on mobile */
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 0.9rem; /* Smaller text for mobile */
+        padding: 15px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.5rem; /* Reduce heading size on smaller screens */
+    }
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* Invert carousel icons to white for visibility */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: transparent !important; /* Removes background color */
+    outline: none; /* Removes outline if any */
+}
+
+.carousel-inner img {
+    width: 100%; /* Makes the image stretch to fit the carousel width */
+    height: 600px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+}
+
+/* About Section */
+footer#about {
+    background-color: #343a40; /* Dark gray background */
+    color: #f8f9fa; /* Light gray text */
+ 
+}
+
+footer#about h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff; /* White for heading */
+    text-transform: uppercase; /* Make heading uppercase */
+    letter-spacing: 1px; /* Add some spacing to letters */
+}
+
+footer#about p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #dcdcdc; /* Lighter gray text for readability */
+    margin: 0 auto; /* Center align the text block */
+}
+
+footer#about a {
+    color: #d4aa2b; /* Bootstrap warning color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold link */
+}
+
+footer#about a:hover {
+    color: #ffffff; /* White on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+footer#about .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ensure that the cards are displayed next to each other */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card1 {
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 48%; /* Makes sure two columns take up almost half the width of the screen */
+        margin-right: 2%; /* Adds space between columns */
+    }
+
+    .col-md-6:last-child {
+        margin-right: 0; /* Removes margin for the last item */
+    }
+}
+
+
+/* Ensures text inside the white boxes is dark and readable */
+.card1 {
+    background-color: white; /* White background */
+    color: #333 !important; /* Ensures dark text color */
+    padding: 20px; /* Padding for spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle box-shadow for the card */
+    
+}
+
+.card1 h5 {
+    font-size: 1.5rem;
+    color: #333; /* Dark text color for headings */
+}
+
+.card1 p {
+    font-size: 1rem;
+    color: #333; /* Dark color for paragraphs */
+}
+
+@media (max-width: 602px) {
+    .card1 {
+        opacity: 1; /* Ensure visibility */
+        transform: translateX(0); /* Reset translation */
+    }
+}
+
+
+/* Testimonials Section Styling */
+#testimonials {
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 50px 0;
+}
+
+#testimonials h2 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.testimonial-card {
+    background: #fff;
+    border-radius: 10px;
+    transition: transform 1.4s ease, box-shadow 1.4s ease;
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(50px); /* Start below view */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 1.4s ease, box-shadow 1.4s ease, opacity 0.8s ease;
+}
+
+.quote {
+    font-style: italic;
+    color: #555;
+}
+
+h5 {
+    color: #343a40; /* Bootstrap primary blue */
+    font-weight: bold;
+}
+
+
+/* Default navbar styling */
+.custom-fixed-navbar {
+    background-color: #333; /* Change to your desired background color */
+}
+
+.custom-fixed-navbar .navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Right-aligned items by default */
+    gap: 15px; /* Add spacing between items */
+}
+
+.custom-fixed-navbar .nav-link {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for nav links */
+.custom-fixed-navbar .nav-link:hover {
+    color: #ffd700; /* Change to your desired hover color */
+}
+
+/* Responsive alignment */
+@media (max-width: 768px) {
+    .custom-fixed-navbar .navbar-nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Left-align items on smaller screens */
+        gap: 10px;
+    }
+
+    .custom-fixed-navbar .nav-link {
+        padding: 8px 0; /* Adjust padding for vertical stack */
+    }
+}
