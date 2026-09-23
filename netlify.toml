@@ -5,5 +5,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/quiz.html"
+  to = "/web project Flask.html"
   status = 200
